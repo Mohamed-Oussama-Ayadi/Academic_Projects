@@ -12,13 +12,11 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import secrets
-from flask_cors import CORS
 
 
 nltk.download('vader_lexicon')
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.secret_key = secrets.token_hex(16)
 # === Box Classifier ===
@@ -448,26 +446,15 @@ def regression():
             prediction = f"Error: {str(e)}"
     return render_template('regression_stock.html', prediction=prediction, alert=alert, recommendation=recommendation)
 
-def get_filtered_recommendations_production(product_name, user_skin_type, user_usage):
-    filtered = df_production[
-        (df_production['Product_Name'] == product_name) &
-        (df_production['Skin_Type'] == user_skin_type) &
-        (df_production['Usage_Frequency'] == user_usage)
-    ]
-    return filtered
-
-@app.route('/recommendation_production', methods=['GET'])
+@app.route('/recommendation_production', methods=['GET', 'POST'])
 def recommendation_production():
-    product_name = request.args.get('product_name')
-    user_skin_type = request.args.get('user_skin_type')
-    user_usage = request.args.get('user_usage')
-
-    if not all([product_name, user_skin_type, user_usage]):
-        return jsonify({"error": "Missing parameters"}), 400
-
-    results = get_filtered_recommendations_production(product_name, user_skin_type, user_usage)
-
-    return jsonify(results.to_dict(orient='records'))
+    if request.method == 'POST':
+        product_name = request.form['product_name']
+        user_skin_type = request.form['user_skin_type']
+        user_usage = request.form['user_usage']
+        results = get_filtered_recommendations_production(product_name, user_skin_type, user_usage)
+        return render_template('recommendation_production_result.html', prediction=results.to_html(classes="table table-striped", index=False))
+    return render_template('recommendation_production.html', product_names=sorted(df_production['Product_Name'].unique()), skin_types=sorted(df_production['Skin_Type'].unique()), usage_frequencies=sorted(df_production['Usage_Frequency'].unique()))
 
 # ✅ Import nécessaire en haut de ton fichier app.py
 import pickle
