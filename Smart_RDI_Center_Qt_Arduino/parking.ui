@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>arduinoP</class>
+ <widget class="QDialog" name="arduinoP">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1355</width>
+    <height>847</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>690</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Envoyer</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="table_events">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>270</y>
+     <width>721</width>
+     <height>401</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>30</y>
+     <width>561</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; color:#9f9f9f;&quot;&gt;Parking smart RDI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>690</y>
+     <width>138</width>
+     <height>66</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Nombre invités&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_nb">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>690</y>
+     <width>137</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>-160</x>
+     <y>10</y>
+     <width>1501</width>
+     <height>761</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>:/Icones/Icones/par.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QTableView" name="update_label">
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>280</y>
+     <width>211</width>
+     <height>371</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>220</y>
+     <width>291</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Liste  voitures entrées&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>220</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Liste événéments&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_3</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>table_events</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lineEdit_nb</zorder>
+  <zorder>update_label</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
