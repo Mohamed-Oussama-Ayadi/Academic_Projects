@@ -1,0 +1,24 @@
+<p>residence-form works!</p>
+<form [formGroup]="resForm">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label">Name</label>
+      <input type="Name" class="form-control" id="exampleInputName1" formControlName="name" >
+     
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputAddress1" class="form-label">Address</label>
+      <input type="Address" class="form-control" id="exampleInputAddress1" formControlName="Address" >
+    </div>
+ <div class="mb-3">
+      <label for="exampleInputStatus1" class="form-label">Name</label>
+      <input type="Status" class="form-control" id="exampleInputStatus1" formControlName="status" >
+     
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputImage1" class="form-label">Image</label>
+        <input type="file" class="form-control" id="exampleInputImage1" formControlName="image">
+       
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

@@ -1,0 +1,53 @@
+<p>residences works!</p>
+<input type="text" name="" id="" placeholder="tape address" [(ngModel)]="item">
+<a routerLink="/addResidence">Add residences</a>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of filterByAdress()">
+            <td scope="row"><img [src]="res.image" height="50px" width="50px" /></td>
+            <td>{{ res.name }}</td>
+            <td *ngIf="res.status === 'Disponible'" style="color: green">
+              {{ res.status }}
+            </td>
+            <td *ngIf="res.status === 'Vendu'" style="color: red">
+              {{ res.status }}
+            </td>
+            <td *ngIf="res.status === 'En Construction'" style="color: orange">
+              {{ res.status }}
+            </td>
+      
+            <td>
+              <!-- <button [routerLink]="['/details',res.id]" >details</button> -->
+              <button routerLink="/residences/details/{{res.id}}" >details</button>
+              <button (click)="showLocation(res.address)">Show location</button>
+              <button (click)="addFavorite(res)">Like</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+    <div class="col" style="background-color: brown;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+
+
+
+
+<ul *ngFor="let res of listFavorite">
+  <li>{{ res.name }}</li>
+</ul>

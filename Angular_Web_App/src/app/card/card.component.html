@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem">
+  <img src="../../assets/ph1.jfif" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h2 class="card-text" [style.color]="textcolor">
+      {{title | uppercase}}, {{date | date}}
+    </h2>
+    <input type="text" [placeholder]="plc" [(ngModel)]="qty">
+    <button (click)="getQuantity()">Détails</button>
+  </div>
+</div>
