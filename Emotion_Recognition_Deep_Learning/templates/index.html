@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Reconnaissance d'Émotions - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .upload-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px dashed #dee2e6;
+        }
+        
+        .upload-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .upload-section h3 i {
+            font-size: 1.5em;
+        }
+        
+        .file-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: white;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .result-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .emotion-display {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        
+        .confidence {
+            font-size: 1.5em;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        .probabilities {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .probability-bar {
+            margin: 10px 0;
+        }
+        
+        .probability-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .bar-container {
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+        }
+        
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 Reconnaissance d'Émotions</h1>
+            <p>Détection automatique des émotions à partir de séquences vidéo</p>
+        </div>
+        
+        <div class="content">
+            <div class="upload-section">
+                <h3>📤 Upload d'Images</h3>
+                <form id="imageForm" enctype="multipart/form-data">
+                    <input type="file" name="frames" multiple accept="image/*" class="file-input" required>
+                    <small>Sélectionnez au moins 10 images (séquence vidéo)</small>
+                    <button type="submit" class="btn" id="imageBtn">
+                        🎯 Analyser les Émotions
+                    </button>
+                </form>
+                
+                <h3>🎥 Upload de Vidéo</h3>
+                <form id="videoForm" enctype="multipart/form-data">
+                    <input type="file" name="video" accept="video/*" class="file-input" required>
+                    <small>Sélectionnez une vidéo courte</small>
+                    <button type="submit" class="btn" id="videoBtn">
+                        🎬 Analyser la Vidéo
+                    </button>
+                </form>
+            </div>
+            
+            <div class="result-section">
+                <h3>📊 Résultats</h3>
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Analyse en cours...</p>
+                </div>
+                
+                <div id="result" class="result-card" style="display: none;">
+                    <div class="emotion-display" id="emotionDisplay">😊</div>
+                    <h2 id="emotionText">Heureux</h2>
+                    <div class="confidence" id="confidenceText">95% de confiance</div>
+                    
+                    <div class="probabilities">
+                        <h4>Probabilités détaillées:</h4>
+                        <div id="probabilitiesList"></div>
+                    </div>
+                </div>
+                
+                <div id="alert"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emotionIcons = {
+            'angry': '😠',
+            'disgust': '🤢', 
+            'fear': '😨',
+            'happy': '😊',
+            'neutral': '😐',
+            'sad': '😢',
+            'surprise': '😲'
+        };
+        
+        const emotionNames = {
+            'angry': 'Colère',
+            'disgust': 'Dégoût',
+            'fear': 'Peur', 
+            'happy': 'Heureux',
+            'neutral': 'Neutre',
+            'sad': 'Triste',
+            'surprise': 'Surprise'
+        };
+        
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+            hideAlert();
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        function showAlert(message, type) {
+            const alertDiv = document.getElementById('alert');
+            alertDiv.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+        }
+        
+        function hideAlert() {
+            document.getElementById('alert').innerHTML = '';
+        }
+        
+        function displayResult(result) {
+            hideLoading();
+            
+            if (result.error) {
+                showAlert('Erreur: ' + result.error, 'error');
+                return;
+            }
+            
+            document.getElementById('emotionDisplay').textContent = emotionIcons[result.emotion];
+            document.getElementById('emotionText').textContent = emotionNames[result.emotion];
+            document.getElementById('confidenceText').textContent = result.confidence + '% de confiance';
+            
+            const probabilitiesList = document.getElementById('probabilitiesList');
+            probabilitiesList.innerHTML = '';
+            
+            for (const [emotion, prob] of Object.entries(result.probabilities)) {
+                const barDiv = document.createElement('div');
+                barDiv.className = 'probability-bar';
+                barDiv.innerHTML = `
+                    <div class="probability-label">
+                        <span>${emotionNames[emotion]} ${emotionIcons[emotion]}</span>
+                        <span>${prob}%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="width: ${prob}%"></div>
+                    </div>
+                `;
+                probabilitiesList.appendChild(barDiv);
+            }
+            
+            document.getElementById('result').style.display = 'block';
+            showAlert('Analyse terminée avec succès!', 'success');
+        }
+        
+        // Gestion du formulaire images
+        document.getElementById('imageForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            showLoading();
+            
+            const formData = new FormData(e.target);
+            const files = formData.getAll('frames');
+            
+            if (files.length < 10) {
+                hideLoading();
+                showAlert('Au moins 10 images sont nécessaires', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                displayResult(result);
+            } catch (error) {
+                hideLoading();
+                showAlert('Erreur réseau: ' + error.message, 'error');
+            }
+        });
+        
+        // Gestion du formulaire vidéo
+        document.getElementById('videoForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            showLoading();
+            
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/api/predict-video', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                displayResult(result);
+            } catch (error) {
+                hideLoading();
+                showAlert('Erreur réseau: ' + error.message, 'error');
+            }
+        });
+        
+        // Vérification de l'état du modèle au chargement
+        fetch('/api/model-info')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showAlert('Modèle chargé avec succès! Prêt à analyser.', 'success');
+                }
+            })
+            .catch(error => {
+                showAlert('Erreur de connexion au modèle', 'error');
+            });
+    </script>
+</body>
+</html>

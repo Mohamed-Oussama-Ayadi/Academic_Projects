@@ -1,0 +1,16 @@
+{
+    "num_classes": 7,
+    "lstm_hidden_size": 128,
+    "lstm_num_layers": 1,
+    "image_size": 48,
+    "sequence_length": 10,
+    "emotions": [
+        "angry",
+        "disgust",
+        "fear",
+        "happy",
+        "neutral",
+        "sad",
+        "surprise"
+    ]
+}
