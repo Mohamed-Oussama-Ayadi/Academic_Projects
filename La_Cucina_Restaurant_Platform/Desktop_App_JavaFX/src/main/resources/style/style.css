@@ -1,0 +1,147 @@
+.root{
+    -fx-background-color:#EAEEF4;
+}
+
+.side_ankerpane{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    
+}
+.inner_pane{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+
+}
+.most_inner_pane{
+    -fx-background-color:#6780E2;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+
+#btn_workbench{
+    -fx-background-color:#141313;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #141313;
+}
+.btn_workbench11{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+.pane_1{
+    -fx-background-color:#fea116;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #fea116;
+}
+.progress{
+    -fx-background-color:#ffffff;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #ffffff;
+}
+.pane_11{
+    -fx-background-color:#ffffff;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #ffffff;
+}
+.pane_111{
+    -fx-background-color:#FD9999;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #FD9999;
+
+}
+.pane_1111{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+
+.image-circulaire {
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+}
+.text-field {
+    -fx-background-color: #f2f2f2; /* Couleur de fond */
+    -fx-text-inner-color: #333333; /* Couleur du texte */
+    -fx-prompt-text-fill: #999999; /* Couleur du texte de l'invite */
+    -fx-border-color: #cccccc; /* Couleur de la bordure */
+    -fx-border-width: 1px; /* Largeur de la bordure */
+    -fx-border-radius: 5px; /* Rayon de la bordure */
+    -fx-padding: 5px; /* Rembourrage interne */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-family: "Arial"; /* Famille de police */
+}
+
+.text-field:hover {
+    -fx-background-color: #e6e6e6; /* Couleur de fond au survol */
+}
+
+.text-field:focused {
+    -fx-border-color: #4d90fe; /* Couleur de la bordure en état de focus */
+}
+
+.text-field:disabled {
+    -fx-opacity: 0.7; /* Opacité pour les champs désactivés */
+}
+.text1-field {
+    -fx-background-color: white; /* Set background color to white */
+    -fx-border-color: #fea116; /* Set border color to #fea116 */
+    -fx-border-width: 3px; /* Set border width */
+    -fx-text-fill: black; /* Set text color */
+    -fx-font-size: 14px; /* Set font size */
+    -fx-font-family: Arial; /* Set font family */
+}
+.combo-box .list-cell:selected {
+    -fx-background-color: #fea116;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #fea116; /* Changement de la couleur du texte */
+}
+
+
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: white; /* Couleur de texte par défaut */
+    -fx-font-size: 14px; /* Taille de police */
+}
+
+.transparent-button:hover {
+    -fx-text-fill: #fea116; /* Changer la couleur du texte en #fea116 (jaune orangé) lorsque survolé */
+}
+
+
+
+
