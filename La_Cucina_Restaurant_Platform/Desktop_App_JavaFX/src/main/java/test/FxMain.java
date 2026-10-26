@@ -1,0 +1,30 @@
+package test;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class FxMain extends Application {
+
+
+    public static void main(String[] args){
+        launch();
+
+    }
+    public void start(Stage stage)throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/TableAdmin.fxml"));
+        Parent parent = loader.load(); // charger l interface dans la variable parent
+
+        Scene scene = new Scene(parent);
+
+        stage.setTitle("La Cucina");
+        // injecter la scene dans la stage
+        stage.setScene(scene);
+
+
+        stage.show();
+
+    }
+}

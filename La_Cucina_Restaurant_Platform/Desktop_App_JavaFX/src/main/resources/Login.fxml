@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="649.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Login">
+   <children>
+      <ImageView fitHeight="671.0" fitWidth="1028.0" layoutX="-5.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/arriere_plan.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="538.0" layoutY="106.0" opacity="0.97" prefHeight="465.0" prefWidth="410.0" style="-fx-background-color: #fea116;">
+         <children>
+            <TextField fx:id="PasswordField1" alignment="TOP_CENTER" layoutX="104.0" layoutY="213.0" prefHeight="36.0" prefWidth="238.0" promptText="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button fx:id="SeConnecterButton" layoutX="114.0" layoutY="376.0" mnemonicParsing="false" onAction="#LoginButtonOnAction" prefHeight="36.0" prefWidth="216.0" style="-fx-background-color: #0F172B;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Label fx:id="errorLabel" layoutX="71.0" layoutY="132.0" prefHeight="30.0" prefWidth="289.0" text=" " />
+            <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="184.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/verrouiller-alt.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="63.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons-utilisateur.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="63.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons-privé.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="UsernameField" alignment="TOP_CENTER" layoutX="104.0" layoutY="170.0" prefHeight="36.0" prefWidth="238.0" promptText="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <CheckBox fx:id="LoginShowPassword" layoutX="97.0" layoutY="257.0" mnemonicParsing="false" onAction="#ShowPassword" prefHeight="19.0" prefWidth="136.0" text="Show Password">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </CheckBox>
+            <Hyperlink fx:id="LoginForgetPassword" layoutX="172.0" layoutY="412.0" onAction="#handleForgetPasswordLink" text="Forgot Password?" />
+            <PasswordField fx:id="PasswordField" alignment="TOP_CENTER" layoutX="104.0" layoutY="213.0" prefHeight="36.0" prefWidth="238.0" promptText="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <Label fx:id="captchaTextLabel" layoutX="108.0" layoutY="283.0" prefHeight="78.0" prefWidth="150.0" text=" ">
+               <font>
+                  <Font name="Wingdings" size="40.0" />
+               </font>
+            </Label>
+            <TextField fx:id="captchaTextField" layoutX="263.0" layoutY="308.0" opacity="0.79" prefHeight="30.0" prefWidth="84.0" promptText="Code" style="-fx-background-color: #0F172B;">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="98.0" fitWidth="238.0" layoutX="128.0" layoutY="128.0" opacity="0.36" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/LogoApplication-LaCucina.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="SignUpButton" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" onAction="#openSignUp" prefHeight="36.0" prefWidth="216.0" style="-fx-background-color: #fea116;" text="Sign up" textFill="#030000">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="171.0" layoutY="417.0" prefHeight="26.0" prefWidth="171.0" text="Don't have an account ?" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="226.0" prefHeight="64.0" prefWidth="346.0" text="Savor the Flavors" textFill="WHITE">
+         <font>
+            <Font name="Britannic Bold" size="44.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="290.0" text=" of La Cucina !" textFill="WHITE">
+         <font>
+            <Font name="Britannic Bold" size="44.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IngredientAdmin">
+   <children>
+      <HBox fx:id="root" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="827.0" prefWidth="1543.0" styleClass="root" stylesheets="@style/style.css">
+         <children>
+            <VBox prefHeight="781.0" prefWidth="281.0" />
+            <Pane prefHeight="881.0" prefWidth="1152.0">
+               <children>
+                  <ImageView fitHeight="1039.0" fitWidth="1590.0" layoutX="-320.0" layoutY="-90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/arriere_plan.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutY="-1.0" prefHeight="78.0" prefWidth="1268.0" style="-fx-background-color: #0F172B;">
+                     <children>
+                        <TextField alignment="TOP_CENTER" layoutX="360.0" layoutY="22.0" opacity="0.86" prefHeight="39.0" prefWidth="288.0" promptText="Search" styleClass="text1-field" stylesheets="@style/style.css">
+                           <font>
+                              <Font name="Arial Bold" size="55.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="LogoutBtn" layoutX="1085.0" layoutY="17.0" onAction="#OnLogoutBtn" prefHeight="45.0" prefWidth="153.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Log Out">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                        <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="303.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/ImagesDashboard/chercher.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <AnchorPane fx:id="side_ankerpane" layoutX="-282.0" layoutY="-6.0" prefHeight="837.0" prefWidth="307.0" style="-fx-background-color: #0F172B;" styleClass="side_ankerpane" stylesheets="@style/style.css">
+                     <children>
+                        <Button fx:id="HomeBtn" layoutX="30.0" layoutY="176.0" onAction="#handleHomeBtn" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Home">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/icons/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                        <Button fx:id="UserManagementBtn" layoutX="29.0" layoutY="265.0" onAction="#handleUserManagementBtn" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="User management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <ImageView fitHeight="129.0" fitWidth="307.0" layoutX="-4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/ImagesDashboard/Logo-LaCucina.png.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btn_workbench112" layoutX="25.0" layoutY="480.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Delivery management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/Delivery.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench113" layoutX="25.0" layoutY="534.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Reclamtion management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/reclamation.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench114" layoutX="26.0" layoutY="426.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Order management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/order.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench1131" layoutX="25.0" layoutY="642.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Reservation management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/reservation.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench1132" layoutX="25.0" layoutY="588.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Donation management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/Donation.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench111" layoutX="26.0" layoutY="318.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Menu management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/menu.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench1112" layoutX="25.0" layoutY="372.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="User management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/icons/management.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btn_workbench11311" layoutX="24.0" layoutY="696.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Table management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/ImagesDashboard/table.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                        <ImageView fitHeight="39.0" fitWidth="32.0" layoutX="220.0" layoutY="772.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/ImagesDashboard/pizza.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="EventManagementBtn" layoutX="25.0" layoutY="749.0" prefHeight="32.0" prefWidth="260.0" style="-fx-background-color: #f7ba5e;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Event management">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/icons8-evénement-accepté-provisoirement-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="BLUE" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="957.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/pizza.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="52.0" layoutX="973.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/icons-tasse-avec-delapaille.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="87.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/icons8-piment-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="38.0" layoutX="181.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/icons8-spaghetti-64.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="51.0" layoutY="121.0" prefHeight="720.0" prefWidth="1210.0">
+                     <children>
+                        <TextField fx:id="tfnom" layoutX="138.0" layoutY="160.0" prefHeight="45.0" prefWidth="363.0" promptText="Name" styleClass="text1-field" />
+                        <Label layoutX="14.0" layoutY="169.0" prefHeight="26.0" prefWidth="119.0" text="Name:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="UpdateButton" layoutX="323.0" layoutY="665.0" mnemonicParsing="false" onAction="#OnUpdate" prefHeight="39.0" prefWidth="119.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="InsertButton" layoutX="154.0" layoutY="665.0" mnemonicParsing="false" onAction="#insertProduct" prefHeight="39.0" prefWidth="119.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Insert" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="uploadBtn" layoutX="382.0" layoutY="375.0" mnemonicParsing="false" onAction="#uploadImg" prefHeight="39.0" prefWidth="119.0" style="-fx-background-color: #fea116;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Upload" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="14.0" layoutY="241.0" prefHeight="26.0" prefWidth="119.0" text="Price" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="322.0" prefHeight="26.0" prefWidth="119.0" text="Image" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="450.0" prefHeight="26.0" prefWidth="119.0" text="Categorie" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbcat" layoutX="138.0" layoutY="450.0" prefHeight="25.0" prefWidth="363.0" promptText="Categorie" />
+                        <TextField fx:id="tfimg" layoutX="138.0" layoutY="313.0" prefHeight="45.0" prefWidth="363.0" promptText="Image" styleClass="text1-field" />
+                        <TextField fx:id="tfprix" layoutX="138.0" layoutY="232.0" prefHeight="45.0" prefWidth="363.0" promptText="Price" styleClass="text1-field" />
+                        <ScrollPane layoutX="518.0" layoutY="70.0" prefHeight="568.0" prefWidth="679.0">
+                           <content>
+                              <GridPane fx:id="grid">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="45.0" fitWidth="38.0" layoutX="337.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/ImagesDashboard/iconsHamburger.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

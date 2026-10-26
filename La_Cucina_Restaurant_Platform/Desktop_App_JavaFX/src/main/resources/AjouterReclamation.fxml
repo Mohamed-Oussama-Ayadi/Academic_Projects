@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="801.0" prefWidth="1512.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterReclamation">
+   <children>
+      <AnchorPane layoutY="-6.0" prefHeight="262.0" prefWidth="1543.0" style="-fx-background-color: #0F172B;">
+         <children>
+            <Label layoutX="649.0" layoutY="159.0" prefHeight="62.0" prefWidth="242.0" text="CONTACT US" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="37.0" />
+               </font>
+            </Label>
+            <Label fx:id="homeBtn" layoutX="569.0" layoutY="51.0" onMouseClicked="#handleHomeBtnClick" text="HOME" textFill="#fcfbfb">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="donationBtn" layoutX="934.0" layoutY="51.0" onMouseClicked="#goTodonation" text="DONNATION" textFill="#fcfbfb">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="794.0" layoutY="51.0" text="RECLAMATION" textFill="#fea116">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="menuBtn" layoutX="642.0" layoutY="51.0" onMouseClicked="#redirectToMenu" text="MENU" textFill="#fcfbfb">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="Eventsbtn" layoutX="715.0" layoutY="51.0" onMouseClicked="#redirectToEvents" text="EVENTS" textFill="#fcfbfb">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="profileImageView" fitHeight="56.0" fitWidth="67.0" layoutX="1448.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ImagesDashboard/icons8-nom-100.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="NomPrenomLabel" layoutX="1293.0" layoutY="53.0" prefHeight="26.0" prefWidth="154.0" textFill="#d9bebe">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="1070.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#goToreservation" prefHeight="42.0" prefWidth="163.0" style="-fx-background-color: #fea116;" text="BOOK A TABLE" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <ImageView fitHeight="143.0" fitWidth="303.0" layoutX="34.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/LogoApplication-LaCucina.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="10.0" layoutY="253.0" prefHeight="533.0" prefWidth="1518.0">
+         <children>
+            <ImageView fitHeight="104.0" fitWidth="189.0" layoutX="834.0" layoutY="438.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/restaurant_arrierePlan.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="104.0" fitWidth="189.0" layoutX="1015.0" layoutY="439.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/restaurant_arrierePlan.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="435.0" fitWidth="696.0" layoutX="834.0" layoutY="4.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/restaurant_arrierePlan.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="570.0" fitWidth="900.0" layoutX="-65.0" layoutY="-17.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/restaurant_arrierePlan.jpeg" />
+               </image>
+            </ImageView>
+            <Label fx:id="errorLabel" layoutX="568.0" layoutY="10.0" prefHeight="26.0" prefWidth="280.0" />
+            <AnchorPane layoutX="1190.0" layoutY="258.0" prefHeight="286.0" prefWidth="339.0">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="67.0" layoutX="285.0" layoutY="178.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/restaurant_arrierePlan.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="104.0" fitWidth="189.0" layoutX="170.0" layoutY="188.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/restaurant_arrierePlan.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="104.0" fitWidth="189.0" layoutX="-9.0" layoutY="178.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/restaurant_arrierePlan.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="315.0" fitWidth="342.0" layoutY="-48.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/pizzaaa.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="complexityImageView" fitHeight="39.0" fitWidth="42.0" layoutX="1219.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="passwordMatchLabel" layoutX="896.0" layoutY="312.0" prefHeight="18.0" prefWidth="267.0" />
+            <Label fx:id="usernameStatusLabel" layoutX="332.0" layoutY="249.0" prefHeight="18.0" prefWidth="230.0" />
+            <FlowPane fx:id="reccontainertf" layoutX="848.0" layoutY="86.0" onMouseClicked="#obtenirIdMuseeSelectionne" opacity="0.9" prefHeight="400.0" prefWidth="642.0" styleClass="text1-field" stylesheets="@style/style.css" />
+            <AnchorPane layoutX="91.0" layoutY="86.0" prefHeight="400.0" prefWidth="664.0">
+               <children>
+                  <TextField fx:id="tfemail" layoutX="237.0" layoutY="24.0" prefHeight="46.0" prefWidth="339.0" styleClass="text1-field" stylesheets="@style/style.css" />
+                  <TextField fx:id="tfdescription" layoutX="237.0" layoutY="78.0" prefHeight="118.0" prefWidth="339.0" styleClass="text1-field" stylesheets="@style/style.css" />
+                  <Label layoutX="135.0" layoutY="35.0" text="Email : " textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="124.0" text="Description : " textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="133.0" layoutY="222.0" text="Date :" textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="94.0" layoutY="274.0" text="Choose your " textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="tfchoice" layoutX="237.0" layoutY="268.0" prefHeight="39.0" prefWidth="180.0" styleClass="text1-field" stylesheets="@style/style.css" />
+                  <DatePicker fx:id="tfdate" layoutX="237.0" layoutY="212.0" prefHeight="46.0" prefWidth="339.0" styleClass="text1-field" stylesheets="@style/style.css" />
+                  <Label layoutX="96.0" layoutY="294.0" text="commande : " textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="savebutton" layoutX="468.0" layoutY="335.0" mnemonicParsing="false" onAction="#ajouterReclamation" prefHeight="46.0" prefWidth="170.0" style="-fx-background-color: orange;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Save" textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="179.0" layoutY="335.0" mnemonicParsing="false" onAction="#resetfield" prefHeight="46.0" prefWidth="170.0" style="-fx-background-color: orange;" styleClass="btn_workbench11" stylesheets="@style/style.css" text="Reset" textFill="#0f172b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <VBox layoutX="25.0" layoutY="277.0" prefHeight="42.0" prefWidth="47.0">
+                     <children>
+                        <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#stat" text="stat" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="pdfbtn" layoutX="26.0" layoutY="313.0" mnemonicParsing="false" onAction="#genererPDF" text="Button" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="1081.0" layoutY="54.0" text="MY RECLAMATIONS" textFill="#0f172b">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
