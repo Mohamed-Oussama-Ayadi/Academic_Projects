@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reclamation index{% endblock %}
+
+{% block body %}
+    <h1>Reclamation</h1>
+    <li class="dropdown" style="list-style: none; margin-bottom: 100px; display:flex; justify-content: center  ">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #91DAF0; font-size: 25px; ">Trier les réclamations <span class="caret"></span></a>
+        <ul class="dropdown-menu" style="background-color: #FEFCF3; border: none;">
+            <li><a href="{{ path('reclamations_date')}}" style="color: #F9A936; text-decoration: none; font-size: 20px;">Tri par date</a></li>
+            <li><a href="{{ path('reclamations_etat')}}" style="color: #F26A77; text-decoration: none; font-size: 20px;">Tri par état</a></li>
+            <li><a href="{{ path('reclamations_type')}}" style="color: #BEE5B4; text-decoration: none; font-size: 20px;">Tri par type</a></li>
+        </ul>
+    </li>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Etat</th>
+            <th>DateCreation</th>
+            <th>Type</th>
+            <th>GenerateWithAi</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.description }}</td>
+                <td>{{ reclamation.etat ? 'Traite' : 'Non Traite' }}</td>
+                <td>{{ reclamation.dateCreation ? reclamation.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ reclamation.type }}</td>
+                <td>{{ reclamation.generateWithAi ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_reclamation_show', {'id': reclamation.id}) }}"> Show</a>
+                    <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}"> Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="pagination" style="display: flex; justify-content: center; margin-top: 20px;">
+        {{ knp_pagination_render(reclamations) }}
+
+        <style>
+            /* Define your pagination styles here */
+            .pagination ul.pagination {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .pagination ul.pagination li {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .pagination ul.pagination li.active {
+                background-color: #007bff;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+
+            .pagination ul.pagination li a {
+                text-decoration: none;
+                color: #007bff;
+                padding: 5px 10px;
+                border: 1px solid #007bff;
+                border-radius: 5px;
+            }
+
+            .pagination ul.pagination li a:hover {
+                background-color: #007bff;
+                color: #fff;
+            }
+        </style>
+    </div>
+    <a href="{{ path('app_reclamation_new') }}">Create new</a>
+    <button><a href="{{ path('reclamation_listePdf') }}" class="custom-button beige-button">PDF</a></button>
+
+{% endblock %}
