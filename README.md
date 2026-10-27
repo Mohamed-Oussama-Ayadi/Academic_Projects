@@ -7,7 +7,8 @@
 
 | Projet | Description | Technologies |
 |---|---|---|
-| [Cosmetic_Supply_Chain_BI_AI](Cosmetic_Supply_Chain_BI_AI) | Optimisation d'une supply chain cosmétique : ETL, data warehouse en constellation, modèles IA (choix fournisseurs, stocks, analyse de sentiment) | Talend, Python, Power BI |
+| [La_Cucina_Restaurant_Platform](La_Cucina_Restaurant_Platform) | Plateforme de gestion de restaurant (PIDEV 3A) : app desktop + app web, réservations, événements, commandes, réclamations, paiement | JavaFX, Symfony, MySQL, Stripe, Twilio |
+| [Cosmetic_Supply_Chain_BI_AI](Cosmetic_Supply_Chain_BI_AI) | Optimisation d'une supply chain cosmétique : ETL, data warehouse en constellation, modèles IA (choix fournisseurs, stocks, analyse de sentiment) + notebooks ML (clustering, Random Forest, séries temporelles, recommandation) | Talend, Python, Power BI |
 | [Supply_Chain_Data_Warehouse](Supply_Chain_Data_Warehouse) | Data warehouse supply chain : sources internes/externes et modélisation | SQL Server, Excel |
 | [Emotion_Recognition_Deep_Learning](Emotion_Recognition_Deep_Learning) | Reconnaissance d'émotions faciales avec un CNN + application web (projet d'examen Deep Learning, 5ᵉ année) | PyTorch, Flask, Colab |
 | [NLP_Text_Classification_App](NLP_Text_Classification_App) | Classification et clustering de textes avec embeddings + application | Python, scikit-learn, NLP |
