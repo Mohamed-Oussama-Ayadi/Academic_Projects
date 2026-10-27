@@ -1,0 +1,13 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}New Tables{% endblock %}
+
+{% block body %}
+    <h1>Create new Tables</h1>
+
+    <div style="text-align: center;">
+        {{ include('tables/_form.html.twig') }}
+    </div>
+
+    <a href="{{ path('app_tables_index') }}">Back to list</a>
+{% endblock %}

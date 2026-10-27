@@ -1,0 +1,34 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Tables{% endblock %}
+
+{% block body %}
+    <h1>Tables</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Numerotable</th>
+                <td>{{ table.numerotable }}</td>
+            </tr>
+            <tr>
+                <th>Capacite</th>
+                <td>{{ table.capacite }}</td>
+            </tr>
+            <tr>
+                <th>Emplacement</th>
+                <td>{{ table.emplacement }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ table.disponibilite ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tables_index') }}">back to list</a>
+
+    <a href="{{ path('app_tables_edit', {'numerotable': table.numerotable}) }}">edit</a>
+
+    {{ include('tables/_delete_form.html.twig') }}
+{% endblock %}

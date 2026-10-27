@@ -1,0 +1,68 @@
+
+
+
+{{ form_start(form, {'attr': {'id': 'reservation-form'}}) }}
+
+<div class="form-group">
+    {{ form_label(form.nbrPersonnes) }}
+    {{ form_widget(form.nbrPersonnes, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group">
+    {{ form_label(form.date) }}
+    {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group">
+    {{ form_label(form.horaire) }}
+    {{ form_widget(form.horaire, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="form-group">
+    {{ form_label(form.numTab) }}
+    {{ form_widget(form.numTab, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="h-captcha" data-sitekey="d903a890-791f-4b98-af22-0e247d467a82" data-callback="onHcaptchaSubmit"></div>
+
+<button class="btn" id="btnnn" disabled>{{ button_label|default('Save') }}</button>
+<style>
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+{{ form_end(form) }}
+
+
+<script>
+    function onHcaptchaSubmit(token) {
+        // Enable the submit button when captcha is resolved
+        document.getElementById('btnnn').removeAttribute('disabled');
+    }
+
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+        // Prevent the default form submission if captcha is not resolved
+        if (!document.querySelector('.h-captcha-response').value) {
+            event.preventDefault();
+            alert('Veuillez vérifier que vous n\'êtes pas un robot.');
+        }
+    });
+</script>

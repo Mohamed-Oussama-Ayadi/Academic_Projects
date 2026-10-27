@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Tables index{% endblock %}
+
+{% block body %}
+    {% block header %}
+  
+    {% endblock %}
+    
+    <h1>Tables index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numerotable</th>
+                <th>Capacite</th>
+                <th>Emplacement</th>
+                <th>Disponibilite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for table in tables %}
+            <tr>
+                <td>{{ table.numerotable }}</td>
+                <td>{{ table.capacite }}</td>
+                <td>{{ table.emplacement }}</td>
+                <td>{{ table.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_tables_show', {'numerotable': table.numerotable}) }}">show</a>
+                    <a href="{{ path('app_tables_edit', {'numerotable': table.numerotable}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tables_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservations index{% endblock %}
+
+{% block body %}
+<center>
+    <div class="search-container" style="display: inline-block; vertical-align: top;">
+        <input type="text" id="live_search" placeholder="Search..." style="width: 200px; padding: 10px; border: 1px solid #ccc; border-radius: 20px;">
+    </div>
+</center>
+<center><h1>Reservations</h1></center>
+<div>
+    <a href="{{ path('app_tables_sort_by_date') }}" class="btn btn-primary">Sort by Date</a>
+    <a href="{{ path('app_tables_sort_by_horaire') }}" class="btn btn-primary">Sort by Horaire</a>
+</div>
+<center>
+<div class="card-container">
+    {% for reservation in pagination %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Reservation ID: {{ reservation.idReservation }}</h5>
+            <p class="card-text">NbrPersonnes: {{ reservation.nbrPersonnes }}</p>
+            <p class="card-text">Date: {{ reservation.date ? reservation.date|date('Y-m-d') : '' }}</p>
+            <p class="card-text">Horaire: {{ reservation.horaire }}</p>
+            <a href="{{ path('app_reservations_show', {'idReservation': reservation.idReservation}) }}" class="btn btn-primary">Show</a>
+            <a href="{{ path('app_reservations_edit', {'idReservation': reservation.idReservation}) }}" class="btn btn-secondary">Edit</a>
+        </div>
+    </div>
+    {% else %}
+    <p>No records found</p>
+    {% endfor %}
+</div>
+</center>
+<div class="pagination justify-content-center" style="margin-top: 20px;">
+    {% if pagination.currentPageNumber != 1 %}
+    <a href="{{ path('app_reservations_index', {'page': pagination.currentPageNumber - 1}) }}" class="page-link">Previous</a>
+    <a href="{{ path('app_reservations_index', {'page': 1}) }}" class="page-link">First</a>
+    {% endif %}
+
+    {% if pagination.currentPageNumber != pagination.pageCount %}
+    <a href="{{ path('app_reservations_index', {'page': pagination.currentPageNumber + 1}) }}" class="page-link">Next</a>
+    <a href="{{ path('app_reservations_index', {'page': pagination.pageCount}) }}" class="page-link">Last</a>
+    {% endif %}
+</div>
+
+<a href="{{ path('app_reservations_new') }}" class="btn btn-success">Create new</a>
+<button><a href="{{ path('reservations_listePdf') }}" class="custom-button beige-button">PDF</a></button>
+
+<script>
+    // Function to perform dynamic search
+    document.getElementById('live_search').addEventListener('input', function() {
+        var input = this.value.toLowerCase();
+        var cards = document.querySelectorAll('.card');
+
+        cards.forEach(function(card) {
+            var found = false;
+            card.querySelectorAll('.card-text').forEach(function(text) {
+                if (text.textContent.toLowerCase().indexOf(input) > -1) {
+                    found = true;
+                }
+            });
+            if (found) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}
